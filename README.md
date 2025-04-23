@@ -177,16 +177,21 @@ Follow these steps to create a project in **Google Developer Console** and set u
 
 ---
 
-### Step 2: Configure Application Properties
+### Configure Application Properties
 
 Edit the `application.properties` file to add your Google OAuth credentials (Client ID and Client Secret):
 
-``` properties ```
+## properties 
+
 ``` # Google OAuth2 Configuration
 spring.security.oauth2.client.registration.google.client-id=YOUR_CLIENT_ID
 spring.security.oauth2.client.registration.google.client-secret=YOUR_CLIENT_SECRET
 spring.security.oauth2.client.registration.google.scope=profile,email
-spring.security.oauth2.client.registration.google.redirect-uri=http://localhost:8080/login/oauth2/code/google ```
+spring.security.oauth2.client.registration.google.redirect-uri=http://localhost:8080/login/oauth2/code/google
+
+```
+
+---
 
 ## License 📄
 
