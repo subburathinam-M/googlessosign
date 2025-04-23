@@ -4,6 +4,17 @@ This project demonstrates the implementation of Google Single Sign-On (SSO) in a
 
 The Google Single Sign-On (SSO) Sign-In Project demonstrates how to integrate Google OAuth 2.0 authentication into a Spring Boot application with MongoDB as the data store. This project allows users to log in using their Google account, and it automatically stores their user details (name, email, etc.) in the MongoDB database if they don’t already exist. The application handles the authentication flow, saves user information, and provides a simple interface where logged-in users are displayed.
 
+## Dependencies 📦
+
+The project uses the following main dependencies:
+
+- Spring Boot Starter Web
+- Spring Boot Starter Security
+- Spring Security OAuth2 Client
+- Spring Data MongoDB
+- Thymeleaf
+
+
 ## Key Features ✨
 
 ### Google OAuth2 Integration 🔐
@@ -173,11 +184,16 @@ Follow these steps to create a project in **Google Developer Console** and set u
 
 Edit the `application.properties` file to add your Google OAuth credentials (Client ID and Client Secret):
 
-```properties
-# Google OAuth2 Configuration
+``` properties ```
+``` # Google OAuth2 Configuration
 spring.security.oauth2.client.registration.google.client-id=YOUR_CLIENT_ID
 spring.security.oauth2.client.registration.google.client-secret=YOUR_CLIENT_SECRET
 spring.security.oauth2.client.registration.google.scope=profile,email
-spring.security.oauth2.client.registration.google.redirect-uri=http://localhost:8080/login/oauth2/code/google
+spring.security.oauth2.client.registration.google.redirect-uri=http://localhost:8080/login/oauth2/code/google ```
+
+## License 📄
+
+This project is open-source and available under the [MIT License](LICENSE).
+
 
 
