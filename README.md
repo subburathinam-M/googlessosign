@@ -72,8 +72,6 @@ This is the callback URL where Google will redirect the user after a successful 
 ---
 
 
-
-
 ## Project Structure 🏗️
 ```
 src
@@ -112,11 +110,10 @@ src
 
 Clone the project repository to your local machine:
 
-```bash
+
 git clone https://github.com/your-username/google-sso-signin.git
 cd google-sso-signin
 
----
 
 # Google OAuth 2.0 Integration with Spring Boot
 
