@@ -2,13 +2,33 @@
 
 This project demonstrates the implementation of Google Single Sign-On (SSO) in a Spring Boot application using OAuth2 and MongoDB to store user details. Users can log in with their Google accounts, and their details are saved in the MongoDB database if they don't already exist.
 
+The Google Single Sign-On (SSO) Sign-In Project demonstrates how to integrate Google OAuth 2.0 authentication into a Spring Boot application with MongoDB as the data store. This project allows users to log in using their Google account, and it automatically stores their user details (name, email, etc.) in the MongoDB database if they don’t already exist. The application handles the authentication flow, saves user information, and provides a simple interface where logged-in users are displayed.
+
+## Key Features ✨
+
+### Google OAuth2 Integration 🔐
+- Users can authenticate via their **Google accounts** securely using **OAuth 2.0**.
+  
+### MongoDB Integration 🗄️
+- The user details (name, email, etc.) are saved to a **MongoDB database** if they do not already exist.
+
+### User Management 👥
+- After logging in, users are presented with a simple dashboard that displays a list of users who have signed in using Google.
+
+### Easy Configuration ⚙️
+- Setup requires minimal steps, including:
+  - Creating **OAuth credentials** via the **Google Developer Console**.
+  - Configuring **Spring Boot** application properties for OAuth integration.
+  - Integrating Google OAuth into the application seamlessly.
+
 ## Table of Contents 📑
 
-1. [Google Developer Console Setup](#google-developer-console-setup)
-2. [Project Structure](#project-structure)
-3. [Running the Application](#running-the-application)
-4. [Application Configuration](#application-configuration)
-5. [Additional Notes](#additional-notes)
+1. [Google Developer Console Setup 🛠️](#google-developer-console-setup)
+2. [Project Structure 🏗️](#project-structure)
+3. [Running the Application 🏃‍♂️](#running-the-application)
+4. [Application Configuration ⚙️](#application-configuration)
+5. [Additional Notes 💡](#additional-notes)
+
 
 ## Google Developer Console Setup 🛠️
 
@@ -39,6 +59,9 @@ This is the callback URL where Google will redirect the user after a successful 
 2. Copy the **Client ID** and **Client Secret**, as you will use them to configure your Spring Boot application.
 
 ---
+
+
+
 
 ## Project Structure 🏗️
 ```
@@ -81,6 +104,8 @@ Clone the project repository to your local machine:
 ```bash
 git clone https://github.com/your-username/google-sso-signin.git
 cd google-sso-signin
+
+---
 
 # Google OAuth 2.0 Integration with Spring Boot
 
@@ -144,11 +169,15 @@ Follow these steps to create a project in **Google Developer Console** and set u
 
 ---
 
-## Project Setup 🚀
+### Step 2: Configure Application Properties
 
-### 1. Clone the Repository
+Edit the `application.properties` file to add your Google OAuth credentials (Client ID and Client Secret):
 
-```bash
-git clone https://github.com/yourusername/google-oauth-springboot.git
-cd google-oauth-springboot
+```properties
+# Google OAuth2 Configuration
+spring.security.oauth2.client.registration.google.client-id=YOUR_CLIENT_ID
+spring.security.oauth2.client.registration.google.client-secret=YOUR_CLIENT_SECRET
+spring.security.oauth2.client.registration.google.scope=profile,email
+spring.security.oauth2.client.registration.google.redirect-uri=http://localhost:8080/login/oauth2/code/google
+
 
